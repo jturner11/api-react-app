@@ -21,6 +21,12 @@ class App extends Component {
     componentDidMount () {
         console.log('[App] componentDidMount');
     }
+     updateLanguage(x) {
+        this.setState({ 
+            languages: [...this.state.languages, x]
+         }) 
+
+    }
 
   render() {
     console.log('[App] render');
@@ -30,15 +36,13 @@ class App extends Component {
             <h1>Find the best repos for any given langauge</h1>
             </div>
             <LanguageSearch
-                onAdd={ (x) => { this.setState({ languages: [x] }) } } />
-
+                onAdd={this.updateLanguage.bind(this)} />
+    <div className="App__container">
             {this.state.languages.map((language) => {
                     return <MostStarred language={ language } date="2017-04-12" per_page="3"/>
             })}
-            <div className="App__container">
+            
                 
-                {/* <MostStarred language="Ruby" date="2016-01-01" per_page="3"/>
-                <MostStarred language="Javascript" date="2015-11-03" per_page="3" /> */}
             </div>
         </div>
     );
