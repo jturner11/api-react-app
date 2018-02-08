@@ -5,30 +5,39 @@ import "./App.css";
 class LanguageSearch extends Component {
     constructor(props) {
         super(props);
-        this.state = {value: ''};
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+
+    componentWillMount () {
+        console.log('[LanguageSearch] componentWillMount');
+    }
+
+    componentDidMount () {
+        console.log('[LanguageSearch] componentDidMount');
+    }
+
     handleChange(e) {
         this.setState({
             value: e.target.value}) 
         }
       handleSubmit(e) {
-        console.log('a name was submitted: ' + this.state.value);
         e.preventDefault();
-        
+        console.log('[LanguageSearch]', this.searchInput.value);
+        this.props.onAdd(this.searchInput.value);
       }
 
       render() {
+          console.log('[LanguageSearch] render');
           return(
             <form onSubmit={this.handleSubmit}>
                 <label>
                     Choose language:
-                    <input type="text" value={this.state.value} onChange={this.handleChange} />
+                    <input type="text" ref={ (input) => { this.searchInput = input; } } />
                 </label>
-                <button type="submit" value="Submit" >Submit</button>
-          </form>
+                <button type="submit" value="Submit">Submit</button>
+            </form>
         )
     }
 }

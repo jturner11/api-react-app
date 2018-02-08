@@ -10,7 +10,9 @@ class MostStarred extends Component {
                 repos: [],
             };
     }
+
     componentWillMount () {
+        console.log('[MostStarred] componentWillMount');
         const { date, language, per_page } = this.props;
         
         gitHubApiFetch(date, language, per_page)
@@ -18,6 +20,23 @@ class MostStarred extends Component {
                 this.setState({ repos: items });
             })
     }
+    componentWillReceiveProps(nextProps) {
+        const { date, language, per_page } = nextProps 
+        
+        if(nextProps.language !== this.props.language) {
+            gitHubApiFetch(date,language, per_page)
+            .then(({ items }) => {
+                this.setState({ repos: items });
+            })
+          // nextProps.myProp has a different value than our current prop
+          // so we can perform some calculations based on the new value
+        }
+      }
+
+    componentDidMount () {
+        console.log('[MostStarred] componentDidMount');
+    }
+
     renderRepo (repo, index) {
         const { name, html_url, description, created_at, stargazers_count } = repo;
         return (
@@ -38,6 +57,7 @@ class MostStarred extends Component {
         );
     }
     render() {
+        console.log('[MostStarred] render');
         return (
             <div className="repo-list">
             <div className="repo-list__langauge">
