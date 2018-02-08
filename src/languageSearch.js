@@ -1,32 +1,35 @@
 import React, { Component } from "react";
+import "./App.css";
 
 
-class languageSearch extends Component {
+class LanguageSearch extends Component {
     constructor(props) {
         super(props);
         this.state = {value: ''};
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-      }
-
-      handleSubmit(event) {
-        console.log('A name was submitted: ' + this.state.value);
-        event.preventDefault();
+    }
+    handleChange(e) {
+        this.setState({
+            value: e.target.value}) 
+        }
+      handleSubmit(e) {
+        console.log('a name was submitted: ' + this.state.value);
+        e.preventDefault();
+        
       }
 
       render() {
           return(
             <form onSubmit={this.handleSubmit}>
-            <label>
-              Language:
-              <input type="text" value={this.state.value} onChange={this.handleChange} />
-            </label>
-            <input type="submit" value="Submit" />
+                <label>
+                    Choose language:
+                    <input type="text" value={this.state.value} onChange={this.handleChange} />
+                </label>
+                <button type="submit" value="Submit" >Submit</button>
           </form>
-          )
-      }
-
+        )
+    }
 }
-
-export default languageSearch
+export default LanguageSearch
