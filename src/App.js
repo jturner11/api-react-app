@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "./App.css";
 import { gitHubApiFetch } from "./services";
 import moment from "moment";
+import languageSearch from "./languageSearch"
+
 class MostStarred extends Component {
   constructor(props) {
     super(props);
@@ -42,12 +44,15 @@ class MostStarred extends Component {
 
     render() {
         return (
+            <div>
+            <languageSearch/>
             <div className="repo-list">
                 <div className="repo-list__langauge">
                      {this.props.language}
                 </div>
                 { this.state.repos.map(this.renderRepo) }
             </div>  
+            </div>
         );
   }
 }
