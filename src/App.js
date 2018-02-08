@@ -57,7 +57,7 @@ class App extends Component {
     return (
       <div className="App">
       <div className="App__title">
-        <h1>Find the best repo's for any given langauge</h1>
+        <h1>Find the best repos for any given langauge</h1>
       </div>
       <div className="App__container">
         <MostStarred language="PHP" date="2017-04-12" per_page="3"/>
