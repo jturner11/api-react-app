@@ -1,0 +1,61 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.App__container {
+    border: 1px solid white;
+    display : flex;
+
+}
+.repo-list__langauge{
+    background-color: cornflowerblue;
+    color : white;
+    height: 40px;
+    align-content: centers;
+    padding-top:20px;
+    font-size: 20px;
+    
+}
+.repo-list {
+    flex: 1;
+    background-color: darkcyan;
+    border: 1px solid white;
+
+}
+.repo-box {
+    
+    height:250px;
+    margin:0px;
+}
+
+p {
+    color: aliceblue;
+    font-size: 16px;
+    text-shadow: silver;
+}
+
+
