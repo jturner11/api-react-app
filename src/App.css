@@ -29,7 +29,6 @@
 .App__container {
     border: 1px solid white;
     display : flex;
-
 }
 .repo-list__langauge{
     background-color: cornflowerblue;
@@ -47,7 +46,6 @@
 
 }
 .repo-box {
-    
     height:250px;
     margin:0px;
 }
