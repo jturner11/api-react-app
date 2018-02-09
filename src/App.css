@@ -27,42 +27,49 @@
   to { transform: rotate(360deg); }
 }
 .App__container {
-    border: 1px solid white;
+    border: 2px solid rgb(255, 255, 255);
     display : flex;
+    flex-wrap: wrap;
+    width:80%;
+    margin: 0 auto;
+
 }
 .repo-list__langauge{
-    background-color: cornflowerblue;
+    background-color: rgb(79, 199, 143);
     color : white;
     height: 40px;
     align-content: centers;
-    padding-top:20px;
-    font-size: 20px;
+    font-size: 30px;
 }
-.repo-list__remove-language{
-    width: 20px;
+.repo-list__remove-button{
+    width: 40px;
+    height: 40px;
     float: right;
-    margin:10px;
-}
-.repo-list__remove-language button{
-    background-color: red;
+    background-color: rgb(218, 10, 10);
     color:white;
-    font-size: 14px;
+    font-size: 16px;
 }
 .repo-list {
     flex: 1;
-    background-color: darkcyan;
-    border: 1px solid white;
+    background-color: rgb(255, 255, 255);
+    border: 3px solid rgb(9, 201, 57);
+    width: 33%;
 
 }
 .repo-box {
-    height:250px;
+    height:300px;
     margin:0px;
 }
 
+.language-search form{
+    height: 50px
+}
+
 p {
-    color: aliceblue;
-    font-size: 16px;
+    color: rgb(35, 36, 36);
+    font-size: 14px;
     text-shadow: silver;
+    padding: 10px;
 }
 
 

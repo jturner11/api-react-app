@@ -67,9 +67,10 @@ class MostStarred extends Component {
             <div className="repo-list">
                 <div className="repo-list__langauge">
                     {this.props.language}
-                <button onClick={ this.handleDelete }>x</button>
-            </div>
+                <button className="repo-list__remove-button" onClick={ this.handleDelete }>x</button>
+                </div>
                 { this.state.repos.map(this.renderRepo) }
+                
             </div>  
         );
     }

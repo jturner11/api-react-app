@@ -28,6 +28,7 @@ class App extends Component {
          }) 
     }
     removeLanguage(x){
+        console.log(x)
         const updateLanguages=()=>{ return pull(this.state.languages, x)}
         this.setState({
             languages: updateLanguages()
@@ -39,7 +40,10 @@ class App extends Component {
     return (
         <div className="App">
             <div className="App__title">
-                <h1>Find the best repos for any given langauge</h1>
+                <h1>Git Hub Repo App</h1>
+                <h3> This app makes it easy for you to see the 3 most <br/>popular repositories for  
+                    any given programming langauage.<br/> Simply type in the language you want to see.
+                </h3>
             </div>
             <LanguageSearch
                 onAdd={this.addLanguage.bind(this)}

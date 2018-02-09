@@ -21,6 +21,7 @@ class LanguageSearch extends Component {
       render() {
           console.log('[LanguageSearch] render');
           return(
+              <div className="language-search">
             <form onSubmit={this.handleSubmit}>
                 <label>
                     Add language:
@@ -28,6 +29,7 @@ class LanguageSearch extends Component {
                 </label>
                 <button type="submit" value="Submit">Add</button>
             </form>
+            </div>
           )
     }
 }
