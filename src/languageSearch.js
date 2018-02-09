@@ -5,18 +5,17 @@ import "./App.css";
 class LanguageSearch extends Component {
     constructor(props) {
         super(props);
-
-        // this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
-    // handleChange(e) {
-    //     this.setState({
-    //         value: e.target.value}) 
-    //     }
+        this.handleDelete = this.handleDelete.bind(this)
+     }
+    
       handleSubmit(e) {
         e.preventDefault();
         this.props.onAdd(this.searchInput.value);
+      }
+      handleDelete(e) {
+        e.preventDefault();
+        this.props.onClick(this.searchInput.remove);
       }
 
       render() {
@@ -29,7 +28,7 @@ class LanguageSearch extends Component {
                 </label>
                 <button type="submit" value="Submit">Add</button>
             </form>
-        )
+          )
     }
 }
 export default LanguageSearch

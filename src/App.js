@@ -5,6 +5,7 @@ import moment from "moment";
 import LanguageSearch from "./languageSearch"
 import MostStarred from "./mostStarred"
 import languageSearch from "./languageSearch";
+import {pull} from "lodash/array";
 
 class App extends Component {
     constructor(props) {
@@ -21,11 +22,16 @@ class App extends Component {
     componentDidMount () {
         console.log('[App] componentDidMount');
     }
-     updateLanguage(x) {
+    addLanguage(x) {
         this.setState({ 
             languages: [...this.state.languages, x]
          }) 
-
+    }
+    removeLanguage(x){
+        const updateLanguages=()=>{ return pull(this.state.languages, x)}
+        this.setState({
+            languages: updateLanguages()
+        })
     }
 
   render() {
@@ -33,16 +39,17 @@ class App extends Component {
     return (
         <div className="App">
             <div className="App__title">
-            <h1>Find the best repos for any given langauge</h1>
+                <h1>Find the best repos for any given langauge</h1>
             </div>
             <LanguageSearch
-                onAdd={this.updateLanguage.bind(this)} />
-    <div className="App__container">
+                onAdd={this.addLanguage.bind(this)}
+             />
+            <div className="App__container">
             {this.state.languages.map((language) => {
-                    return <MostStarred language={ language } date="2017-04-12" per_page="3"/>
-            })}
-            
-                
+                    return <MostStarred 
+                    onRemove={this.removeLanguage.bind(this)}
+                    language={ language } date="2017-04-12" per_page="3"/>
+            })} 
             </div>
         </div>
     );

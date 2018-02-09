@@ -1,6 +1,7 @@
 import React,{Component} from "react"
 import { gitHubApiFetch } from "./services";
 import moment from "moment";
+import LanguageSearch from "./languageSearch";
 
 
 class MostStarred extends Component {
@@ -9,6 +10,7 @@ class MostStarred extends Component {
             this.state = {
                 repos: [],
             };
+            this.handleDelete = this.handleDelete.bind(this);
     }
 
     componentWillMount () {
@@ -20,6 +22,7 @@ class MostStarred extends Component {
                 this.setState({ repos: items });
             })
     }
+
     componentWillReceiveProps(nextProps) {
         const { date, language, per_page } = nextProps 
         
@@ -28,48 +31,47 @@ class MostStarred extends Component {
             .then(({ items }) => {
                 this.setState({ repos: items });
             })
-          // nextProps.myProp has a different value than our current prop
-          // so we can perform some calculations based on the new value
         }
       }
 
     componentDidMount () {
         console.log('[MostStarred] componentDidMount');
     }
+    handleDelete(e) {
+        e.preventDefault();
+        this.props.onRemove(this.props.language);
+      }
 
     renderRepo (repo, index) {
         const { name, html_url, description, created_at, stargazers_count } = repo;
         return (
-                <div className="repo-box"
-                     key={ `repo-${index}` }>
-                        <p className="repo-box__name">
-                            <h4> { name } </h4>
-                        </p>
-                        <p><a href="{ html_url }"> { html_url}</a></p>
-                        <p className="repo-box__description"> { description }</p>
-                        <p>
-                            <span className="repo-box__date">{ moment(created_at).format("Do-MMMM-YYYY") }</span>{" "}
-                            <span className="repo-box__stars">
-                                <p>{ stargazers_count }</p>
-                            </span>
-                        </p>
-                </div>
+            <div className="repo-box"
+                key={ `repo-${index}` }>
+                    <p className="repo-box__name">
+                        <h4> { name } </h4>
+                    </p>
+                    <p><a href="{ html_url }"> { html_url}</a></p>
+                    <p className="repo-box__description"> { description }</p>
+                    <p>
+                        <span className="repo-box__date">{ moment(created_at).format("Do-MMMM-YYYY") }</span>{" "}
+                        <span className="repo-box__stars">
+                            <p>{ stargazers_count }</p>
+                        </span>
+                    </p>
+            </div>
         );
     }
     render() {
         console.log('[MostStarred] render');
         return (
             <div className="repo-list">
-            <div className="repo-list__langauge">
-            <div className="repo-list__remove-language">
-                    <button>X</button>
-                 </div>
-                 {this.props.language}
+                <div className="repo-list__langauge">
+                    {this.props.language}
+                <button onClick={ this.handleDelete }>x</button>
             </div>
-            { this.state.repos.map(this.renderRepo) }
+                { this.state.repos.map(this.renderRepo) }
             </div>  
         );
     }
 }
-
 export default MostStarred
