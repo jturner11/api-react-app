@@ -2,6 +2,7 @@ import React,{Component} from "react"
 import { gitHubApiFetch } from "./services";
 import moment from "moment";
 import LanguageSearch from "./languageSearch";
+import starImage from "./images/star.png";
 
 
 class MostStarred extends Component {
@@ -53,9 +54,9 @@ class MostStarred extends Component {
                     <p><a href="{ html_url }"> { html_url}</a></p>
                     <p className="repo-box__description"> { description }</p>
                     <p>
-                        <span className="repo-box__date">{ moment(created_at).format("Do-MMMM-YYYY") }</span>{" "}
+                        <span className="repo-box__date">Created: { moment(created_at).format("Do-MMMM-YYYY") }</span>{" "}
                         <span className="repo-box__stars">
-                            <p>{ stargazers_count }</p>
+                            <p><img src={starImage}/>{ stargazers_count }</p>
                         </span>
                     </p>
             </div>

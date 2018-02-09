@@ -35,30 +35,41 @@
 
 }
 .repo-list__langauge{
-    background-color: rgb(79, 199, 143);
-    color : white;
-    height: 40px;
+    background-color: rgb(29, 30, 31);
+    color:white;
+    height: 60px;
     align-content: centers;
     font-size: 30px;
 }
 .repo-list__remove-button{
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     float: right;
     background-color: rgb(218, 10, 10);
     color:white;
-    font-size: 16px;
+    font-size: 20px;
+    border-radius: 5px;
 }
 .repo-list {
     flex: 1;
     background-color: rgb(255, 255, 255);
-    border: 3px solid rgb(9, 201, 57);
-    width: 33%;
+    border: 3px solid rgb(31, 41, 46);
+    margin:5px;
 
 }
 .repo-box {
-    height:300px;
+    height:350px;
     margin:0px;
+}
+.repo-box__name {
+    background-color: rgb(66, 70, 68);
+    margin: 0;
+    height:20px;
+}
+.repo-box__name h4 {
+    /* height:10px; */
+    color: white;
+    margin: 0;
 }
 
 .language-search form{
@@ -66,7 +77,7 @@
 }
 
 p {
-    color: rgb(35, 36, 36);
+    color: rgb(7, 7, 7);
     font-size: 14px;
     text-shadow: silver;
     padding: 10px;
