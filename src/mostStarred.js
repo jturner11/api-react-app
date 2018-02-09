@@ -61,6 +61,9 @@ class MostStarred extends Component {
         return (
             <div className="repo-list">
             <div className="repo-list__langauge">
+            <div className="repo-list__remove-language">
+                    <button>X</button>
+                 </div>
                  {this.props.language}
             </div>
             { this.state.repos.map(this.renderRepo) }

@@ -37,7 +37,16 @@
     align-content: centers;
     padding-top:20px;
     font-size: 20px;
-    
+}
+.repo-list__remove-language{
+    width: 20px;
+    float: right;
+    margin:10px;
+}
+.repo-list__remove-language button{
+    background-color: red;
+    color:white;
+    font-size: 14px;
 }
 .repo-list {
     flex: 1;
