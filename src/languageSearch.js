@@ -11,7 +11,7 @@ class LanguageSearch extends Component {
     
       handleSubmit(e) {
         e.preventDefault();
-        this.props.onAdd(this.searchInput.value).reset();
+        this.props.onAdd(this.searchInput.value);
       }
       handleDelete(e) {
         e.preventDefault();
