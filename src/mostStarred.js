@@ -34,7 +34,7 @@ class MostStarred extends Component {
                 this.setState({ repos: items });
             })
         }
-      }
+    }
 
     componentDidMount () {
         console.log('[MostStarred] componentDidMount');
@@ -43,7 +43,7 @@ class MostStarred extends Component {
     handleDelete(e) {
         e.preventDefault();
         this.props.onRemove(this.props.language);
-      }
+    }
 
     renderRepo (repo, index) {
         const { name, html_url, description, created_at, stargazers_count } = repo;
@@ -71,10 +71,9 @@ class MostStarred extends Component {
             <div className="repo-list">
                 <div className="repo-list__langauge">
                     {this.props.language}
-                <button className="repo-list__remove-button" onClick={ this.handleDelete }>x</button>
+                    <button className="repo-list__remove-button" onClick={ this.handleDelete }>x</button>
                 </div>
-                { this.state.repos.map(this.renderRepo) }
-                
+                    { this.state.repos.map(this.renderRepo) }
             </div>  
         );
     }

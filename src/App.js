@@ -24,11 +24,13 @@ class App extends Component {
     componentDidMount () {
         console.log('[App] componentDidMount');
     }
+
     addLanguage(x) {
         this.setState({ 
             languages: [...this.state.languages, x]
          }) 
     }
+
     removeLanguage(x){
         console.log(x)
         const updateLanguages=()=>{ return pull(this.state.languages, x)}
@@ -36,6 +38,7 @@ class App extends Component {
             languages: updateLanguages()
         })
     }
+    
     changeDate(date) {
         console.log(date)
         this.setState({
@@ -69,12 +72,12 @@ class App extends Component {
             <div className="App__container">
                 {this.state.languages.map((language) => {
                     return <MostStarred 
-                    onRemove={this.removeLanguage.bind(this)}
-                    language={ language } per_page="3"
-                    date={this.state.date}
-                />
-            })
-            } 
+                        onRemove={this.removeLanguage.bind(this)}
+                        language={ language } per_page="3"
+                        date={this.state.date}
+                        />
+                    })
+                } 
             </div>
         </div>
     );

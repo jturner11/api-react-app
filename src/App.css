@@ -33,14 +33,14 @@
     width:80%;
     margin: 0 auto;
 }
-.repo-list__langauge{
+.repo-list__langauge {
     background-color: rgb(29, 30, 31);
     color:white;
     height: 60px;
     align-content: centers;
     font-size: 30px;
 }
-.repo-list__remove-button{
+.repo-list__remove-button {
     width: 30px;
     height: 30px;
     float: right;
@@ -72,14 +72,13 @@
     margin: 0;
 }
 
-.language-search form{
+.language-search form {
     height: 50px
 }
 
 .App__SelectorContainer {
     width:60%;
     margin: 0 auto;
-
 }
 .App__SelectDate {
     background-color: rgb(150, 228, 241);
@@ -88,7 +87,7 @@
     height:50px;
     padding-top: 35px;
 }
-.App__LanguageSearch{
+.App__LanguageSearch {
     background-color: rgb(150, 228, 241);
     width:50%;
     display: inline;
