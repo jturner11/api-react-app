@@ -32,7 +32,6 @@
     flex-wrap: wrap;
     width:80%;
     margin: 0 auto;
-
 }
 .repo-list__langauge{
     background-color: rgb(29, 30, 31);
@@ -55,6 +54,7 @@
     background-color: rgb(255, 255, 255);
     border: 3px solid rgb(31, 41, 46);
     margin:5px;
+    border-radius: 5px;
 
 }
 .repo-box {
@@ -74,6 +74,26 @@
 
 .language-search form{
     height: 50px
+}
+
+.App__SelectorContainer {
+    width:60%;
+    margin: 0 auto;
+
+}
+.App__SelectDate {
+    background-color: rgb(150, 228, 241);
+    width: 50%;
+    float: right;
+    height:50px;
+    padding-top: 35px;
+}
+.App__LanguageSearch{
+    background-color: rgb(150, 228, 241);
+    width:50%;
+    display: inline;
+    float: left;
+    padding-top: 35px;
 }
 
 p {

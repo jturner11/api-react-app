@@ -13,7 +13,7 @@ class App extends Component {
         super(props);
             this.state = {
                 languages: [],
-                date:"",
+                date: moment().subtract('months', 1).format('YYYY-MM-DD'),
             };
     }
 
@@ -54,23 +54,27 @@ class App extends Component {
                     any given programming langauage.<br/> Simply type in the language you want to see.
                 </h3>
             </div>
-            <LanguageSearch
-                onAdd={this.addLanguage.bind(this)}
-             />
-             <div className="App__SelectDate">
-             <p> Select between 2 dates: <SelectDate
-             onDateChange={this.changeDate.bind(this)}
-             /></p>
-              
-             </div>
+            <div className="App__SelectorContainer">
+                <div className="App__LanguageSearch">
+                    <LanguageSearch
+                        onAdd={this.addLanguage.bind(this)}
+                    />
+                </div>
+                <div className="App__SelectDate">
+                    <SelectDate
+                        onDateChange={this.changeDate.bind(this)}
+                    />
+                </div>
+            </div>
             <div className="App__container">
-            {this.state.languages.map((language) => {
+                {this.state.languages.map((language) => {
                     return <MostStarred 
                     onRemove={this.removeLanguage.bind(this)}
                     language={ language } per_page="3"
                     date={this.state.date}
-                    />
-            })} 
+                />
+            })
+            } 
             </div>
         </div>
     );

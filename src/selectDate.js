@@ -21,8 +21,8 @@ class SelectDate extends React.Component {
     render() {
         console.log('wasssup')
       return <DatePicker
-          selected={this.state.startDate}
           onChange={this.handleChange}
+          placeholderText="Click to select a date"
       />;
     }
   }

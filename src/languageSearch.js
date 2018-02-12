@@ -11,7 +11,7 @@ class LanguageSearch extends Component {
     
       handleSubmit(e) {
         e.preventDefault();
-        this.props.onAdd(this.searchInput.value);
+        this.props.onAdd(this.searchInput.value).reset();
       }
       handleDelete(e) {
         e.preventDefault();
@@ -23,8 +23,7 @@ class LanguageSearch extends Component {
           return(
               <div className="language-search">
             <form onSubmit={this.handleSubmit}>
-                <label>
-                    Add language:
+                <label> Add language:
                     <input type="text" ref={ (input) => { this.searchInput = input; } } />
                 </label>
                 <button type="submit" value="Submit">Add</button>
