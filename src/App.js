@@ -6,12 +6,14 @@ import LanguageSearch from "./languageSearch"
 import MostStarred from "./mostStarred"
 import languageSearch from "./languageSearch";
 import {pull} from "lodash/array";
+import SelectDate from "./selectDate";
 
 class App extends Component {
     constructor(props) {
         super(props);
             this.state = {
                 languages: [],
+                date:"",
             };
     }
 
@@ -34,9 +36,16 @@ class App extends Component {
             languages: updateLanguages()
         })
     }
+    changeDate(date) {
+        console.log(date)
+        this.setState({
+            date: date.format("YYYY-MM-DD")
+        })
+    }
 
   render() {
     console.log('[App] render');
+    console.log(SelectDate)
     return (
         <div className="App">
             <div className="App__title">
@@ -48,11 +57,19 @@ class App extends Component {
             <LanguageSearch
                 onAdd={this.addLanguage.bind(this)}
              />
+             <div className="App__SelectDate">
+             <p> Select between 2 dates: <SelectDate
+             onDateChange={this.changeDate.bind(this)}
+             /></p>
+              
+             </div>
             <div className="App__container">
             {this.state.languages.map((language) => {
                     return <MostStarred 
                     onRemove={this.removeLanguage.bind(this)}
-                    language={ language } date="2017-04-12" per_page="3"/>
+                    language={ language } per_page="3"
+                    date={this.state.date}
+                    />
             })} 
             </div>
         </div>

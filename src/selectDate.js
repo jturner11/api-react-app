@@ -1,0 +1,30 @@
+import React, { Component } from "react";
+import "./App.css";
+import moment from "moment";
+import DatePicker from "react-datepicker";
+
+import 'react-datepicker/dist/react-datepicker.css';
+
+class SelectDate extends React.Component {
+    constructor (props) {
+      super(props)
+      this.state = {
+        startDate: moment()
+      };
+      this.handleChange = this.handleChange.bind(this);
+    }
+  
+    handleChange(date) {
+    this.props.onDateChange(date)  
+    }
+  
+    render() {
+        console.log('wasssup')
+      return <DatePicker
+          selected={this.state.startDate}
+          onChange={this.handleChange}
+      />;
+    }
+  }
+
+export default SelectDate

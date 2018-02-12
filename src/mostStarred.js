@@ -3,6 +3,7 @@ import { gitHubApiFetch } from "./services";
 import moment from "moment";
 import LanguageSearch from "./languageSearch";
 import starImage from "./images/star.png";
+import selectDate from "./selectDate";
 
 
 class MostStarred extends Component {
@@ -27,7 +28,7 @@ class MostStarred extends Component {
     componentWillReceiveProps(nextProps) {
         const { date, language, per_page } = nextProps 
         
-        if(nextProps.language !== this.props.language) {
+        if(nextProps.language !== this.props.language || nextProps.date !== this.props.date ) {
             gitHubApiFetch(date,language, per_page)
             .then(({ items }) => {
                 this.setState({ repos: items });
@@ -38,6 +39,7 @@ class MostStarred extends Component {
     componentDidMount () {
         console.log('[MostStarred] componentDidMount');
     }
+
     handleDelete(e) {
         e.preventDefault();
         this.props.onRemove(this.props.language);
@@ -64,6 +66,7 @@ class MostStarred extends Component {
     }
     render() {
         console.log('[MostStarred] render');
+        console.log(this.props.date)
         return (
             <div className="repo-list">
                 <div className="repo-list__langauge">
