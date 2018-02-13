@@ -6,6 +6,7 @@ import LanguageSearch from "./languageSearch"
 import MostStarred from "./mostStarred"
 import languageSearch from "./languageSearch";
 import {pull} from "lodash/array";
+import { connect } from 'react-redux';
 import SelectDate from "./selectDate";
 
 class App extends Component {
@@ -13,8 +14,8 @@ class App extends Component {
         super(props);
             this.state = {
                 languages: [],
-                date: moment().subtract('months', 1).format('YYYY-MM-DD'),
             };
+            console.log("yyyy",this.props)
     }
 
     componentWillMount () {
@@ -74,7 +75,7 @@ class App extends Component {
                     return <MostStarred 
                         onRemove={this.removeLanguage.bind(this)}
                         language={ language } per_page="3"
-                        date={this.state.date}
+                        date={this.props.date}
                         />
                     })
                 } 
@@ -83,4 +84,12 @@ class App extends Component {
     );
   }
 }
-export default App;
+const mapStateToProps = (state) => {
+    console.log("xxxx",state)
+    return { 
+        date: state.date
+    }
+} 
+
+
+export default connect(mapStateToProps)(App);
