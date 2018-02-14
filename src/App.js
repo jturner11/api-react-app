@@ -10,6 +10,8 @@ import { connect } from 'react-redux';
 import SelectDate from "./selectDate";
 import {selectDateAction} from "./index";
 import {languageSearchAction} from "./index";
+import {languageDeleteAction} from "./index";
+
 
 
 class App extends Component {
@@ -28,13 +30,13 @@ class App extends Component {
     //      }) 
     // }
 
-    removeLanguage(x){
-        console.log(x)
-        const updateLanguages=()=>{ return pull(this.state.languages, x)}
-        this.setState({
-            languages: updateLanguages()
-        })
-    }
+    // removeLanguage(x){
+    //     console.log(x)
+    //     const updateLanguages=()=>{ return pull(this.state.languages, x)}
+    //     this.setState({
+    //         languages: updateLanguages()
+    //     })}
+    
 
   render() {
     console.log('[App] render');
@@ -60,14 +62,15 @@ class App extends Component {
                 </div>
             </div>
             <div className="App__container">
-                {/* {this.state.languages.map((language) => {
+                {
+                    this.props.languages.map((language) => {
                     return <MostStarred 
-                        onRemove={this.removeLanguage.bind(this)}
+                        onRemove={this.props.deleteLanguage}
                         language={ language } per_page="3"
                         date={this.props.date}
                         />
                     })
-                }  */}
+                  }
             </div>
         </div>
     );
@@ -75,14 +78,15 @@ class App extends Component {
 }
 const mapStateToProps = (state) => {
     return { 
-        date: state.date
+        date: state.date,
+        languages: state.languages
     }
 } 
 const mapDispatchToProps = (dispatch) => {
     return { 
         selectDate: (date) => {dispatch(selectDateAction(date))},
-        selectLanguage: (language) => { dispatch(languageSearchAction(language))}   
-        
+        selectLanguage: (language) => { dispatch(languageSearchAction(language))} ,  
+        deleteLanguage: (language) => {dispatch(languageDeleteAction(language))}
     }
 }
 
