@@ -9,7 +9,7 @@ import { Provider } from 'react-redux';
 import {createAction} from "redux-actions";
 import SelectDate from "./selectDate";
 import logger from "redux-logger";
-import {pull} from "lodash/array";
+import {remove} from "lodash/array";
 
 export const SELECT_DATE = "SELECT_DATE"
 export const LANGUAGE_SEARCH = "LANGUAGE_SEARCH"
@@ -30,9 +30,8 @@ const reducer = (state = INITIAL_STATE, action) => {
         case LANGUAGE_SEARCH:
         return {...state,languages: [...state.languages, action.payload]}
         case LANGUAGE_DELETE:
-        return{...state, languages: pull(state.languages, action.payload)}
+        return {...state, languages: remove(state.languages, (language)=> { return language !== action.payload})}
         default:
-
             return state
     }
 }
