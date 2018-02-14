@@ -8,6 +8,8 @@ import languageSearch from "./languageSearch";
 import {pull} from "lodash/array";
 import { connect } from 'react-redux';
 import SelectDate from "./selectDate";
+import {selectDateAction} from "./index";
+
 
 class App extends Component {
     constructor(props) {
@@ -40,12 +42,12 @@ class App extends Component {
         })
     }
     
-    changeDate(date) {
-        console.log(date)
-        this.setState({
-            date: date.format("YYYY-MM-DD")
-        })
-    }
+    // changeDate(date) {
+    //     console.log(date)
+    //     this.setState({
+    //         date: date.format("YYYY-MM-DD")
+    //     })
+    // }
 
   render() {
     console.log('[App] render');
@@ -66,7 +68,7 @@ class App extends Component {
                 </div>
                 <div className="App__SelectDate">
                     <SelectDate
-                        onDateChange={this.changeDate.bind(this)}
+                        selectDate={this.props.selectDate}
                     />
                 </div>
             </div>
@@ -90,6 +92,12 @@ const mapStateToProps = (state) => {
         date: state.date
     }
 } 
+const mapDispatchToProps = (dispatch) => {
+    return { 
+        selectDate: (date) => {
+            dispatch(selectDateAction(date)) 
+        }
+    }
+} 
 
-
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -6,13 +6,22 @@ import moment from "moment";
 import registerServiceWorker from './registerServiceWorker';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import {createAction} from "redux-actions";
+import SelectDate from "./selectDate";
+
+export const SELECT_DATE = "SELECT_DATE"
+export const selectDateAction = createAction(SELECT_DATE)
 
 const INITIAL_STATE = {
-    date: moment().subtract('years', 1).format('YYYY-MM-DD')
+    date: moment().subtract('months', 1).format('YYYY-MM-DD')
  }
 
 const reducer = (state = INITIAL_STATE, action) => {
+    console.log(moment(action.payload).format('YYYY-MM-DD'))
     switch(action.type) {
+        case SELECT_DATE:
+        return {...state,date:moment(action.payload.format('YYYY-MM-DD'))}
+        case INITIAL_STATE:
         default: 
             return state
     }
@@ -27,3 +36,4 @@ ReactDOM.render(
      </Provider>,
         document.getElementById('root'))
 
+    

@@ -15,7 +15,7 @@ class SelectDate extends React.Component {
     }
   
     handleChange(date) {
-        this.props.onDateChange(date)  
+        this.props.selectDate(date)  
     }
   
     render() {
