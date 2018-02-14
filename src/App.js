@@ -9,17 +9,11 @@ import {pull} from "lodash/array";
 import { connect } from 'react-redux';
 import SelectDate from "./selectDate";
 import {selectDateAction} from "./index";
+import {languageSearchAction} from "./index";
 
 
 class App extends Component {
-    constructor(props) {
-        super(props);
-            this.state = {
-                languages: [],
-            };
-            console.log("yyyy",this.props)
-    }
-
+   
     componentWillMount () {
         console.log('[App] componentWillMount');
     }
@@ -28,11 +22,11 @@ class App extends Component {
         console.log('[App] componentDidMount');
     }
 
-    addLanguage(x) {
-        this.setState({ 
-            languages: [...this.state.languages, x]
-         }) 
-    }
+    // addLanguage(x) {
+    //     this.setState({ 
+    //         languages: [...this.state.languages, x]
+    //      }) 
+    // }
 
     removeLanguage(x){
         console.log(x)
@@ -41,13 +35,6 @@ class App extends Component {
             languages: updateLanguages()
         })
     }
-    
-    // changeDate(date) {
-    //     console.log(date)
-    //     this.setState({
-    //         date: date.format("YYYY-MM-DD")
-    //     })
-    // }
 
   render() {
     console.log('[App] render');
@@ -63,7 +50,7 @@ class App extends Component {
             <div className="App__SelectorContainer">
                 <div className="App__LanguageSearch">
                     <LanguageSearch
-                        onAdd={this.addLanguage.bind(this)}
+                        onAdd={this.props.selectLanguage}
                     />
                 </div>
                 <div className="App__SelectDate">
@@ -73,31 +60,30 @@ class App extends Component {
                 </div>
             </div>
             <div className="App__container">
-                {this.state.languages.map((language) => {
+                {/* {this.state.languages.map((language) => {
                     return <MostStarred 
                         onRemove={this.removeLanguage.bind(this)}
                         language={ language } per_page="3"
                         date={this.props.date}
                         />
                     })
-                } 
+                }  */}
             </div>
         </div>
     );
   }
 }
 const mapStateToProps = (state) => {
-    console.log("xxxx",state)
     return { 
         date: state.date
     }
 } 
 const mapDispatchToProps = (dispatch) => {
     return { 
-        selectDate: (date) => {
-            dispatch(selectDateAction(date)) 
-        }
+        selectDate: (date) => {dispatch(selectDateAction(date))},
+        selectLanguage: (language) => { dispatch(languageSearchAction(language))}   
+        
     }
-} 
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
