@@ -26,7 +26,7 @@ const INITIAL_STATE = {
 const reducer = (state = INITIAL_STATE, action) => {
     switch(action.type) {
         case SELECT_DATE:
-        return {...state,date:moment(action.payload.format('YYYY-MM-DD'))}
+        return {...state,date:moment(action.payload).format('YYYY-MM-DD')}
         case LANGUAGE_SEARCH:
         return {...state,languages: [...state.languages, action.payload]}
         case LANGUAGE_DELETE:

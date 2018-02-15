@@ -19,10 +19,11 @@ class SelectDate extends React.Component {
     }
   
     render() {
-        return <DatePicker
-            onChange={this.handleChange}
-            placeholderText="Click to select a date"
-        />;
+        return <div className="App__SelectDate__date-container"><label>Select Date:</label><DatePicker
+                onChange={this.handleChange}
+                placeholderText={this.props.date}
+            />
+            </div>
     }
 }
 

@@ -57,6 +57,7 @@ class App extends Component {
                 </div>
                 <div className="App__SelectDate">
                     <SelectDate
+                        date={this.props.date}
                         selectDate={this.props.selectDate}
                     />
                 </div>
