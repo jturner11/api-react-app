@@ -16,29 +16,7 @@ import {languageDeleteAction} from "./index";
 
 class App extends Component {
    
-    componentWillMount () {
-        console.log('[App] componentWillMount');
-    }
-
-    componentDidMount () {
-        console.log('[App] componentDidMount');
-    }
-
-    // addLanguage(x) {
-    //     this.setState({ 
-    //         languages: [...this.state.languages, x]
-    //      }) 
-    // }
-
-    // removeLanguage(x){
-    //     console.log(x)
-    //     const updateLanguages=()=>{ return pull(this.state.languages, x)}
-    //     this.setState({
-    //         languages: updateLanguages()
-    //     })}
-    
-
-  render() {
+render() {
     console.log('[App] render');
     console.log(SelectDate)
     return (
@@ -71,7 +49,7 @@ class App extends Component {
                         date={this.props.date}
                         />
                     })
-                  }
+                }
             </div>
         </div>
     );
@@ -86,7 +64,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return { 
         selectDate: (date) => {dispatch(selectDateAction(date))},
-        selectLanguage: (language) => { dispatch(languageSearchAction(language))} ,  
+        selectLanguage: (language) => { dispatch(languageSearchAction(language))},  
         deleteLanguage: (language) => {dispatch(languageDeleteAction(language))}
     }
 }

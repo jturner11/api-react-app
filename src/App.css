@@ -26,13 +26,15 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
 .App__container {
     border: 2px solid rgb(255, 255, 255);
     display : flex;
     flex-wrap: wrap;
-    width:80%;
+    width: 80%;
     margin: 0 auto;
 }
+
 .repo-list__langauge {
     background-color: rgb(29, 30, 31);
     color:white;
@@ -40,6 +42,7 @@
     align-content: centers;
     font-size: 30px;
 }
+
 .repo-list__remove-button {
     width: 30px;
     height: 30px;
@@ -49,25 +52,27 @@
     font-size: 20px;
     border-radius: 5px;
 }
+
 .repo-list {
     flex: 1;
     background-color: rgb(255, 255, 255);
     border: 3px solid rgb(31, 41, 46);
-    margin:5px;
+    margin: 5px;
     border-radius: 5px;
+}
 
-}
 .repo-box {
-    height:350px;
-    margin:0px;
+    height: 350px;
+    margin: 0px;
 }
+
 .repo-box__name {
     background-color: rgb(66, 70, 68);
     margin: 0;
-    height:20px;
+    height: 20px;
 }
+
 .repo-box__name h4 {
-    /* height:10px; */
     color: white;
     margin: 0;
 }
@@ -75,41 +80,46 @@
 .language-search form {
     height: 50px;
 }
+
 .language-search input {
     margin-left: 5px;
 }
 
 .App__SelectorContainer {
-    width:60%;
+    width: 60%;
     margin: 0 auto;
 }
+
 .App__SelectDate {
     background-color: rgb(150, 228, 241);
     width: 50%;
     float: right;
-    height:50px;
+    height: 50px;
     padding-top: 35px;
 }
-.App__SelectDate__date-container{
-display:flex;
+
+.App__SelectDate__date-container {
+display: flex;
 align-items: center;
 justify-content: center;
 }
-.App__SelectDate input{
+
+.App__SelectDate input {
     width:65px;
     border-radius: 2px;
     background-color: rgb(253, 253, 253);
     display: inline;
 }
+
 .App__SelectDate label {
     display: inline;
-    float:left;
+    /* float: left; */
     margin-right: 5px;
 }
-.language-search{
+.language-search {
     display:flex;
-align-items: center;
-justify-content: center;
+    align-items: center;
+    justify-content: center;
 }
 .language-search label{
     margin-right: 5px;

@@ -32,16 +32,16 @@ const reducer = (state = INITIAL_STATE, action) => {
         case LANGUAGE_DELETE:
         return {...state, languages: remove(state.languages, (language)=> { return language !== action.payload})}
         default:
-            return state
+        return state
     }
 }
+
 const store = createStore(reducer, applyMiddleware(logger))
 store.subscribe(() => console.log(store.getState()))
-// store.dispatch({ type: 'INCREMENT' })
 
 ReactDOM.render(        
      <Provider store={store}>
-        <App />
+        <App/>
      </Provider>,
         document.getElementById('root'))
 

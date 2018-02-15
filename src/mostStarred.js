@@ -36,10 +36,6 @@ class MostStarred extends Component {
         }
     }
 
-    componentDidMount () {
-        console.log('[MostStarred] componentDidMount');
-    }
-
     handleDelete(e) {
         e.preventDefault();
         this.props.onRemove(this.props.language);
