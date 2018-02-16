@@ -40,20 +40,30 @@
     color:white;
     height: 60px;
     text-align: center;
-    align-content: centers;
     font-size: 30px;
     padding-top: 5px;
+    display : flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
 }
-
+.repo-list__button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
 .repo-list__remove-button {
     width: 30px;
     height: 30px;
-    margin-right: 5px;
     float: right;
     background-color: rgb(218, 10, 10);
     color:white;
     font-size: 20px;
     border-radius: 5px;
+    flex-wrap: wrap;
+    align-items: flex-end;
 }
 
 .repo-list {
