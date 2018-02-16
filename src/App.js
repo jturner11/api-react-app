@@ -43,7 +43,9 @@ render() {
                 </div>
                 <div className="App__resultsPerPage">
                     <ResultsPerPage
+                    
                     increaseRepoCount={this.props.increaseRepoCount}
+                    per_page={this.props.numberOfRepos}
                     decreaseRepoCount={this.props.decreaseRepoCount}
                     />
                 </div>

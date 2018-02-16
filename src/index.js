@@ -27,7 +27,7 @@ export const decreaseRepoCountAction = createAction(DECREASE_RESULTS_PER_PAGE)
 const INITIAL_STATE = {
     date: moment().subtract('months', 1).format('YYYY-MM-DD'),
     languages: [],
-    numberOfRepos: 3
+    numberOfRepos: 2,
  }
 const increment = (numberOfRepos) => {
     return  add(numberOfRepos,1) 

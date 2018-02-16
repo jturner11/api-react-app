@@ -144,22 +144,32 @@ p {
 
 .ResultsPerPage {
     display: flex;
-align-items: center;
-justify-content: center;
-background-color: rgb(150, 228, 241);
-width: 30%;
-height: 85px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(150, 228, 241);
+    width: 30%;
+    height: 85px;
 }
+
 .ResultsPerPage__increase{
-background-color: green;
-border: solid 2px black;
-width:20px;
-margin: 5px;
+    background-color: green;
+    border: solid 1px aliceblue;
+    border-radius: 3px;
+    width:20px;
+    color: aliceblue;
 }
+
 .ResultsPerPage__decrease{
     background-color: rgb(190, 46, 46);
-    border: solid 2px black;
+    border: solid 1px aliceblue;
+    border-radius: 3px;
     width:20px;
     margin: 5px;
+    color: aliceblue;
 }
-    
+
+.ResultsPerPage__amount{
+background-color: aliceblue;
+margin-right: 5px;
+width:30px;
+}

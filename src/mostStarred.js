@@ -4,6 +4,7 @@ import moment from "moment";
 import LanguageSearch from "./languageSearch";
 import starImage from "./images/star.png";
 import selectDate from "./selectDate";
+import resultsPerPage from "./resultsPerPage"
 
 
 class MostStarred extends Component {
@@ -26,9 +27,9 @@ class MostStarred extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        const { date, language, per_page } = nextProps 
+        const { date, language, per_page} = nextProps 
         
-        if(nextProps.language !== this.props.language || nextProps.date !== this.props.date ) {
+        if(nextProps.language !== this.props.language || nextProps.date !== this.props.date  || nextProps.per_page !== this.props.per_page) {
             gitHubApiFetch(date,language, per_page)
             .then(({ items }) => {
                 this.setState({ repos: items });
