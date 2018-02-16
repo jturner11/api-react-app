@@ -5,12 +5,14 @@ import moment from "moment";
 import LanguageSearch from "./languageSearch"
 import MostStarred from "./mostStarred"
 import languageSearch from "./languageSearch";
-import {pull} from "lodash/array";
+import { pull } from "lodash/array";
 import { connect } from 'react-redux';
 import SelectDate from "./selectDate";
-import {selectDateAction} from "./index";
+import {selectDateAction, increaseRepoCountAction, decreaseRepoCountAction} from "./index";
 import {languageSearchAction} from "./index";
 import {languageDeleteAction} from "./index";
+import ResultsPerPage from "./resultsPerPage";
+
 
 
 
@@ -39,13 +41,19 @@ render() {
                         selectDate={this.props.selectDate}
                     />
                 </div>
+                <div className="App__resultsPerPage">
+                    <ResultsPerPage
+                    increaseRepoCount={this.props.increaseRepoCount}
+                    decreaseRepoCount={this.props.decreaseRepoCount}
+                    />
+                </div>
             </div>
             <div className="App__container">
                 {
                     this.props.languages.map((language) => {
                     return <MostStarred 
                         onRemove={this.props.deleteLanguage}
-                        language={ language } per_page="3"
+                        language={ language } per_page={this.props.numberOfRepos}
                         date={this.props.date}
                         />
                     })
@@ -58,14 +66,17 @@ render() {
 const mapStateToProps = (state) => {
     return { 
         date: state.date,
-        languages: state.languages
+        languages: state.languages,
+        numberOfRepos: state.numberOfRepos,
     }
 } 
 const mapDispatchToProps = (dispatch) => {
     return { 
         selectDate: (date) => {dispatch(selectDateAction(date))},
         selectLanguage: (language) => { dispatch(languageSearchAction(language))},  
-        deleteLanguage: (language) => {dispatch(languageDeleteAction(language))}
+        deleteLanguage: (language) => {dispatch(languageDeleteAction(language))},
+        increaseRepoCount: () => {dispatch(increaseRepoCountAction())},
+        decreaseRepoCount: () => {dispatch(decreaseRepoCountAction())},
     }
 }
 

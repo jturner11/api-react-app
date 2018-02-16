@@ -86,13 +86,13 @@
 }
 
 .App__SelectorContainer {
-    width: 60%;
+    width: 70%;
     margin: 0 auto;
 }
 
 .App__SelectDate {
     background-color: rgb(150, 228, 241);
-    width: 50%;
+    width: 35%;
     float: right;
     height: 50px;
     padding-top: 35px;
@@ -113,20 +113,23 @@ justify-content: center;
 
 .App__SelectDate label {
     display: inline;
-    /* float: left; */
+    float: left;
     margin-right: 5px;
 }
+
 .language-search {
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
-.language-search label{
+
+.language-search label {
     margin-right: 5px;
 }
+
 .App__LanguageSearch {
     background-color: rgb(150, 228, 241);
-    width:50%;
+    width: 35%;
     display: inline;
     float: left;
     padding-top: 35px;
@@ -139,4 +142,24 @@ p {
     padding: 10px;
 }
 
-
+.ResultsPerPage {
+    display: flex;
+align-items: center;
+justify-content: center;
+background-color: rgb(150, 228, 241);
+width: 30%;
+height: 85px;
+}
+.ResultsPerPage__increase{
+background-color: green;
+border: solid 2px black;
+width:20px;
+margin: 5px;
+}
+.ResultsPerPage__decrease{
+    background-color: rgb(190, 46, 46);
+    border: solid 2px black;
+    width:20px;
+    margin: 5px;
+}
+    
