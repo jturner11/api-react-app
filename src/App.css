@@ -36,16 +36,19 @@
 }
 
 .repo-list__langauge {
-    background-color: rgb(29, 30, 31);
+    background-color: rgb(22, 149, 212);
     color:white;
     height: 60px;
+    text-align: center;
     align-content: centers;
     font-size: 30px;
+    padding-top: 5px;
 }
 
 .repo-list__remove-button {
     width: 30px;
     height: 30px;
+    margin-right: 5px;
     float: right;
     background-color: rgb(218, 10, 10);
     color:white;
@@ -56,7 +59,7 @@
 .repo-list {
     flex: 1;
     background-color: rgb(255, 255, 255);
-    border: 3px solid rgb(31, 41, 46);
+    border: 3px solid rgb(22, 149, 212);
     margin: 5px;
     border-radius: 5px;
 }
@@ -88,10 +91,16 @@
 .App__SelectorContainer {
     width: 70%;
     margin: 0 auto;
+    display: flex;
+align-items: center;
+justify-content: center;
+border: 2px solid rgb(22, 149, 212);
+border-radius: 5px;
 }
 
 .App__SelectDate {
-    background-color: rgb(150, 228, 241);
+    background-color: rgb(22, 149, 212);
+    color: aliceblue;
     width: 35%;
     float: right;
     height: 50px;
@@ -128,7 +137,8 @@ justify-content: center;
 }
 
 .App__LanguageSearch {
-    background-color: rgb(150, 228, 241);
+    background-color: rgb(22, 149, 212);
+    color:aliceblue;
     width: 35%;
     display: inline;
     float: left;
@@ -146,9 +156,14 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(150, 228, 241);
-    width: 30%;
+    background-color: rgb(22, 149, 212);
+    color: aliceblue;
+    width: 100%;
     height: 85px;
+    margin-right:50px;
+}
+.ResultsPerPage label {
+    color:black;
 }
 
 .ResultsPerPage__increase {
