@@ -6,7 +6,6 @@ import starImage from "./images/star.png";
 import selectDate from "./selectDate";
 import resultsPerPage from "./resultsPerPage"
 
-
 class MostStarred extends Component {
     constructor(props) {
         super(props);

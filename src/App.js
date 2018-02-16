@@ -13,11 +13,7 @@ import {languageSearchAction} from "./index";
 import {languageDeleteAction} from "./index";
 import ResultsPerPage from "./resultsPerPage";
 
-
-
-
-class App extends Component {
-   
+class App extends Component {  
 render() {
     console.log('[App] render');
     console.log(SelectDate)
@@ -43,7 +39,6 @@ render() {
                 </div>
                 <div className="App__resultsPerPage">
                     <ResultsPerPage
-                    
                     increaseRepoCount={this.props.increaseRepoCount}
                     per_page={this.props.numberOfRepos}
                     decreaseRepoCount={this.props.decreaseRepoCount}
@@ -81,5 +76,4 @@ const mapDispatchToProps = (dispatch) => {
         decreaseRepoCount: () => {dispatch(decreaseRepoCountAction())},
     }
 }
-
 export default connect(mapStateToProps, mapDispatchToProps)(App);

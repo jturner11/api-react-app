@@ -29,12 +29,15 @@ const INITIAL_STATE = {
     languages: [],
     numberOfRepos: 2,
  }
+ 
 const increment = (numberOfRepos) => {
     return  add(numberOfRepos,1) 
 }
+
 const decrease = (numberOfRepos) => {
     return  subtract(numberOfRepos,1) 
 }
+
 const reducer = (state = INITIAL_STATE, action) => {
     switch(action.type) {
         case SELECT_DATE:
@@ -59,6 +62,6 @@ ReactDOM.render(
      <Provider store={store}>
         <App/>
      </Provider>,
-        document.getElementById('root'))
+     document.getElementById('root'))
 
     

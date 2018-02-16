@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./App.css";
 import moment from "moment";
 import DatePicker from "react-datepicker";
-
 import 'react-datepicker/dist/react-datepicker.css';
 
 class SelectDate extends React.Component {
@@ -26,5 +25,4 @@ class SelectDate extends React.Component {
             </div>
     }
 }
-
 export default SelectDate

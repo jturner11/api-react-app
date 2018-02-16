@@ -3,9 +3,7 @@ import "./App.css";
 import { increaseRepoCountAction } from "./index";
 import { decreaseRepoCountAction } from "./index";
 
-
 class ResultsPerPage extends Component{
-
     render(){
         return(
             <div className="ResultsPerPage">
@@ -17,6 +15,4 @@ class ResultsPerPage extends Component{
         )
     }
 }
-
-
 export default ResultsPerPage
