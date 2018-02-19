@@ -49,7 +49,7 @@ class MostStarred extends Component {
                     <p className="repo-box__name">
                         <h4> { name } </h4>
                     </p>
-                    <p><a href="{ html_url }"> { html_url}</a></p>
+                    <p><a href={ html_url } target="_blank"> { html_url}</a></p>
                     <p className="repo-box__description"> { description }</p>
                     <p>
                         <span className="repo-box__date">Created: { moment(created_at).format("Do-MMMM-YYYY") }</span>{" "}
